@@ -7,5 +7,24 @@ class Pokemon{
  }   
 }
 
+class Trainer{
+    //name is trainer name
+    //Pokemon container object is an array
+    constructor(originalTrainer){
+        this.originalTrainer = originalTrainer;
+        this.pokemonTeam = [];
+    }
+    all(){
+        return this.pokemonTeam;
+    }
+    get(name){
+        //check this!!
+        return this.pokemonTeam.find( (element) => {
+            return element.name == name;
+        })
+    }
+    add(pokemonObject){
+        this.pokemonTeam.push(pokemonObject);
+    }
 
 }
