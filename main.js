@@ -3,7 +3,7 @@ class Pokemon {
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
-        this.abilities = abilities;
+        this.abilities = [];
     }
 }
 
@@ -34,13 +34,22 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((respons
     let data = response.data;
     console.log(data)
 
-    console.log(data.abilities)
+    // let abilitiesArray = data.abilities.length
+
+    // for (let i = 0; i < abilitiesArray; i++) {
+    //     let abilitiesName = data.abilities[i].ability.name
+    //     console.log(abilitiesName)
+    // }
+
+    // console.log(abilitiesArray)
+
     let lapras = new Pokemon(
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
         data.abilities.forEach(element => {
-            
+            return element.ability.name;
+            console.log(element.ability.name);
         }),
     )
 })
@@ -49,15 +58,12 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((respons
 //https://pokeapi.co/api/v2/pokemon/380/
 axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/380.json").then((response) => {
     let data = response.data;
-    console.log(data)
 
-    let lapras = new Pokemon(
+    let latias = new Pokemon(
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
-        data.abilities.forEach(element => {
-            
-        }),
+        data.abilities,
     )
 })
 
@@ -66,14 +72,11 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/380.json").then((respons
 //https://pokeapi.co/api/v2/pokemon/448/
 axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/448.json").then((response) => {
     let data = response.data;
-    console.log(data)
 
-    let lapras = new Pokemon(
+    let lucario = new Pokemon(
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
-        data.abilities.forEach(element => {
-            
-        }),
+        data.abilities,
     )
 })
