@@ -49,7 +49,6 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((respons
         data.stats[3].base_stat,
         data.abilities.forEach(element => {
             return element.ability.name;
-            console.log(element.ability.name);
         }),
     )
 })
@@ -63,7 +62,9 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/380.json").then((respons
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
-        data.abilities,
+        data.abilities.forEach(element => {
+            return element.ability.name;
+        }),
     )
 })
 
@@ -77,6 +78,9 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/448.json").then((respons
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
-        data.abilities,
+        data.abilities.forEach(element => {
+            return element.ability.name;
+        }),
     )
 })
+
