@@ -1,5 +1,6 @@
 class Pokemon {
-    constructor(hp, attack, defense, abilities) {
+    constructor(name, hp, attack, defense, abilities) {
+        this.name = name;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -28,12 +29,13 @@ class Trainer {
     }
 }
 
+let elle = new Trainer()
+
 //Lapras PokeAPI Link:
 // https://pokeapi.co/api/v2/pokemon/131/
 axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((response) => {
     let data = response.data;
-    console.log(data)
-
+    // console.log(data)
     // let abilitiesArray = data.abilities.length
 
     // for (let i = 0; i < abilitiesArray; i++) {
@@ -44,6 +46,7 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((respons
     // console.log(abilitiesArray)
 
     let lapras = new Pokemon(
+        data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -51,7 +54,11 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/131.json").then((respons
             return element.ability.name;
         }),
     )
+
+    elle.add(lapras)
 })
+
+console.log(elle)
 
 //Latias PokeAPI Link:
 //https://pokeapi.co/api/v2/pokemon/380/
@@ -59,6 +66,7 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/380.json").then((respons
     let data = response.data;
 
     let latias = new Pokemon(
+        data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -66,6 +74,8 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/380.json").then((respons
             return element.ability.name;
         }),
     )
+
+    elle.add(latias)
 })
 
 
@@ -75,6 +85,7 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/448.json").then((respons
     let data = response.data;
 
     let lucario = new Pokemon(
+        data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -82,5 +93,6 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/448.json").then((respons
             return element.ability.name;
         }),
     )
+    elle.add(lucario)
 })
 
