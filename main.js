@@ -44,8 +44,8 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
 
     // console.log(abilitiesArray)
 
-    let abilitiesList =  []
-    
+    let abilitiesList = []
+
     data.abilities.forEach(element => {
         let abilitiesName = element.ability.name;
         abilitiesList.push(abilitiesName);
@@ -72,8 +72,8 @@ console.log(elle)
 axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
     let data = response.data;
 
-    let abilitiesList =  []
-    
+    let abilitiesList = []
+
     data.abilities.forEach(element => {
         let abilitiesName = element.ability.name;
         abilitiesList.push(abilitiesName);
@@ -85,7 +85,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
         data.stats[4].base_stat,
         data.stats[3].base_stat,
         abilitiesList,
-        )
+    )
 
     elle.add(latias)
     // console.log(latias)
@@ -98,8 +98,8 @@ axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
 axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     let data = response.data;
 
-    let abilitiesList =  []
-    
+    let abilitiesList = []
+
     data.abilities.forEach(element => {
         let abilitiesName = element.ability.name;
         abilitiesList.push(abilitiesName);
