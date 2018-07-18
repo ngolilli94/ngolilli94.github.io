@@ -45,8 +45,6 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
 
     // console.log(abilitiesArray)
 
-    let spirte = response.data.sprites.front_default;
-
     let abilitiesList = []
 
     data.abilities.forEach(element => {
@@ -125,15 +123,22 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     console.log(elle.pokemonTeam[0].name)
 })
 
+//Defining variables to push Information into modals
+let showNum = document.getElementById('displayNum')
 let showName = document.getElementById('displayName')
-let showHP = document.getElementById('displayHP')
 let showImg = document.getElementById('displayImage')
+let showHP = document.getElementById('displayHP')
+let showAtk = document.getElementById('displayAtk')
+let showDef = document.getElementById('displayDef')
 
+
+//defining each Pokeball for click event later & to link ea to specific Pkmn
 let ball1 = document.getElementById('pokeball')
 let ball2 = document.getElementById('diveBall')
 let ball3 = document.getElementById('greatBall')
 let arr = elle.pokemonTeam
 
+//map function + indexOf to correlate Pokeball to specific Pkmn b/c array doesn't always load in same order (depending on load order from API)
 ball1.addEventListener('click', () => {
     console.log('*********')
     setup(arr.map(function(x) { return x.name;}).indexOf('latias'));
@@ -153,7 +158,12 @@ ball3.addEventListener('click', () => {
 let setup = (i) => {
     console.log('&&&&&&&&&&&&&');
     console.log(arr);
+    showNum.innerHTML = "#" + arr[i].dexnum;
     showName.innerHTML = arr[i].name;
-    showHP.innerHTML = arr[i].hp;
     showImg.src = arr[i].sprite;
+    showHP.innerHTML = "HP: " + arr[i].hp;
+    showAtk.innerHTML = "Attack: " + arr[i].attack;
+    showDef.innerHTML = "Defense: " + arr[i].defense;
+
+
 }
