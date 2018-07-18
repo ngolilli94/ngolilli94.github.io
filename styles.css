@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'pokemon-font';
+  src: url("fonts/pokemon-font.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("fonts/pokemon-font.woff2") format("woff2"), url("fonts/pokemon-font.woff") format("woff"), url("fonts/pokemon-font.ttf") format("truetype"); }
 .container {
   position: fixed; }
 
@@ -24,18 +29,18 @@
 
 .text {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+  font-family: 'pokemon-font'; }
 
 .pokeContainer {
   display: flex;
-  justify-content: center;
-  align-content: center; }
+  justify-content: center; }
   .pokeContainer #pokeball {
     width: 20%;
     position: absolute;
