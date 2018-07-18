@@ -1,5 +1,6 @@
 class Pokemon {
-    constructor(name, hp, attack, defense, abilities) {
+    constructor(dexnum, name, hp, attack, defense, abilities) {
+        this.dexnum = dexnum;
         this.name = name;
         this.hp = hp;
         this.attack = attack;
@@ -52,6 +53,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
     })
 
     let lapras = new Pokemon(
+        data.id,
         data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
@@ -80,6 +82,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
     })
 
     let latias = new Pokemon(
+        data.id,
         data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
@@ -106,6 +109,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     })
 
     let lucario = new Pokemon(
+        data.id,
         data.name,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
