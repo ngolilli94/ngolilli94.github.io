@@ -7,7 +7,16 @@
          url('fonts/pokemon-font.ttf')  format('truetype') /* Safari, Android, iOS */
     /* There is no SVG version of this font due to support being dropped in SVG 2 */
   }
+$grass: #00b32d;
 
+#background {
+    height: 300px;
+    width: 700px;
+    border-radius: 50%;
+    background-color: $grass;
+    position: relative;
+    margin: auto;
+}
 .container {
     position: fixed;
 }  
@@ -50,6 +59,7 @@
 .pokeContainer{
     display: flex;
     justify-content: center;
+    background-color: $grass;
     // align-items: center;
 // adjust positions of ea. pokeball
     #pokeball {
