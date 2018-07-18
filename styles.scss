@@ -17,6 +17,8 @@ $grass: #00b32d;
     position: relative;
     margin: auto;
 }
+
+// Image Hover Overlay CSS
 .container {
     position: fixed;
 }  
@@ -60,8 +62,9 @@ $grass: #00b32d;
     display: flex;
     justify-content: center;
     background-color: $grass;
-    // align-items: center;
-// adjust positions of ea. pokeball
+
+
+// Pokeball Positioning
     #pokeball {
         width: 20%;
         position: absolute;
@@ -79,4 +82,18 @@ $grass: #00b32d;
         position: absolute;
         right: 15%;
     }
+}
+
+//Modal Styling
+.modal {
+    // display: flex;
+    // flex-flow: row nowrap;
+
+    #info-basic, #info-stats {
+    border: double;
+    background-color: #d9d9d9;
+    font-family: 'pokemon-font';
+    border-radius: 15px;
+    }
+    
 }
