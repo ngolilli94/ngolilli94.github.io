@@ -1,8 +1,19 @@
 .container {
     position: relative;
-    width: 50%;
   }
-  
+
+  #pokeball {
+      width: 37%;
+  }
+
+  #diveBall {
+      width: 50%;
+  }
+
+  #greatBall {
+      width: 37%;
+  }
+
   .image {
     display: block;
     width: 100%;
@@ -37,3 +48,4 @@
     -ms-transform: translate(-50%, -50%);
     text-align: center;
   }
+

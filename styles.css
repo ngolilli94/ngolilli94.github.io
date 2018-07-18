@@ -1,6 +1,14 @@
 .container {
-  position: relative;
+  position: relative; }
+
+#pokeball {
+  width: 37%; }
+
+#diveBall {
   width: 50%; }
+
+#greatBall {
+  width: 37%; }
 
 .image {
   display: block;
