@@ -1,14 +1,5 @@
 .container {
-  position: relative; }
-
-#pokeball {
-  width: 37%; }
-
-#diveBall {
-  width: 50%; }
-
-#greatBall {
-  width: 37%; }
+  position: fixed; }
 
 .image {
   display: block;
@@ -40,5 +31,22 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center; }
+
+.pokeContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  .pokeContainer #pokeball {
+    width: 20%;
+    position: absolute;
+    left: 15%; }
+  .pokeContainer #diveBall {
+    width: 25%;
+    position: absolute;
+    top: 30%; }
+  .pokeContainer #greatBall {
+    width: 20%;
+    position: absolute;
+    right: 15%; }
 
 /*# sourceMappingURL=styles.css.map */

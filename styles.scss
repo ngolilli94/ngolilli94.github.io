@@ -1,19 +1,6 @@
 .container {
-    position: relative;
-  }
-
-  #pokeball {
-      width: 37%;
-  }
-
-  #diveBall {
-      width: 50%;
-  }
-
-  #greatBall {
-      width: 37%;
-  }
-
+    position: fixed;
+}  
   .image {
     display: block;
     width: 100%;
@@ -49,3 +36,27 @@
     text-align: center;
   }
 
+.pokeContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    // position: relative;
+// adjust positions of ea. pokeball
+    #pokeball {
+        width: 20%;
+        position: absolute;
+        left: 15%;
+    }
+
+    #diveBall {
+        width: 25%;
+        position: absolute;
+        top: 30%;
+}   
+
+    #greatBall {
+        width: 20%;
+        position: absolute;
+        right: 15%;
+    }
+}
