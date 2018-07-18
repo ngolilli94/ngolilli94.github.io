@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
 </head>
+
 <body>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+    <div id="background">
+        <div class="pokeContainer">
+            <div class="container" id="pokeball">
+                <img src="images/pokeball.png" class="image">
+                <div class="overlay">
+                    <div class="text">Latias</div>
+                </div>
+            </div>
+
+            <div class="container" id="diveBall">
+                <img src="images/dive-ball.png" class="image">
+                <div class="overlay">
+                    <div class="text">Lapras</div>
+                </div>
+            </div>
+
+            <div class="container" id="greatBall">
+                <img src="images/great-ball.png" class="image">
+                <div class="overlay">
+                    <div class="text">Lucario</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'pokemon-font';
+    src: url('fonts/pokemon-font.eot'); /* IE9 Compat Modes */
+    src: url('fonts/pokemon-font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/pokemon-font.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/pokemon-font.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/pokemon-font.ttf')  format('truetype') /* Safari, Android, iOS */
+    /* There is no SVG version of this font due to support being dropped in SVG 2 */
+  }
+$grass: #00b32d;
+
+#background {
+    height: 300px;
+    width: 700px;
+    border-radius: 50%;
+    background-color: $grass;
+    position: relative;
+    margin: auto;
+}
+.container {
+    position: fixed;
+}  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+    border-radius: 50%
+  }
+  
+  .container:hover .overlay {
+    opacity: 0.6;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'pokemon-font';
+  }
+
+.pokeContainer{
+    display: flex;
+    justify-content: center;
+    background-color: $grass;
+    // align-items: center;
+// adjust positions of ea. pokeball
+    #pokeball {
+        width: 20%;
+        position: absolute;
+        left: 15%;
+    }
+
+    #diveBall {
+        width: 25%;
+        position: absolute;
+        top: 20%;
+}   
+
+    #greatBall {
+        width: 20%;
+        position: absolute;
+        right: 15%;
+    }
+}

@@ -1,3 +1,66 @@
+@font-face {
+  font-family: 'pokemon-font';
+  src: url("fonts/pokemon-font.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("fonts/pokemon-font.woff2") format("woff2"), url("fonts/pokemon-font.woff") format("woff"), url("fonts/pokemon-font.ttf") format("truetype"); }
+#background {
+  height: 300px;
+  width: 700px;
+  border-radius: 50%;
+  background-color: #00b32d;
+  position: relative;
+  margin: auto; }
 
+.container {
+  position: fixed; }
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+  border-radius: 50%; }
+
+.container:hover .overlay {
+  opacity: 0.6; }
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'pokemon-font'; }
+
+.pokeContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #00b32d; }
+  .pokeContainer #pokeball {
+    width: 20%;
+    position: absolute;
+    left: 15%; }
+  .pokeContainer #diveBall {
+    width: 25%;
+    position: absolute;
+    top: 20%; }
+  .pokeContainer #greatBall {
+    width: 20%;
+    position: absolute;
+    right: 15%; }
 
 /*# sourceMappingURL=styles.css.map */
