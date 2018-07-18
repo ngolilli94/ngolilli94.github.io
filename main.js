@@ -1,7 +1,8 @@
 class Pokemon {
-    constructor(dexnum, name, hp, attack, defense, abilities) {
+    constructor(dexnum, name, sprite, hp, attack, defense, abilities) {
         this.dexnum = dexnum;
         this.name = name;
+        this.sprite = sprite;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -10,7 +11,6 @@ class Pokemon {
 }
 
 class Trainer {
-    //name is trainer name
     //Pokemon container object is an array
     constructor(pokemonTeam) {
         this.pokemonTeam = [];
@@ -45,6 +45,8 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
 
     // console.log(abilitiesArray)
 
+    let spirte = response.data.sprites.front_default;
+
     let abilitiesList = []
 
     data.abilities.forEach(element => {
@@ -55,6 +57,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
     let lapras = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -84,6 +87,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
     let latias = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -111,12 +115,45 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     let lucario = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
         abilitiesList,
     )
     elle.add(lucario)
-    // console.log(lucario)
+    console.log(elle.pokemonTeam[0].name)
 })
 
+let showName = document.getElementById('displayName')
+let showHP = document.getElementById('displayHP')
+let showImg = document.getElementById('displayImage')
+
+let ball1 = document.getElementById('pokeball')
+let ball2 = document.getElementById('diveBall')
+let ball3 = document.getElementById('greatBall')
+let arr = elle.pokemonTeam
+
+ball1.addEventListener('click', () => {
+    console.log('*********')
+    setup(arr.map(function(x) { return x.name;}).indexOf('latias'));
+})
+
+ball2.addEventListener('click', () => {
+    console.log('++++++++++')
+    setup(arr.map(function(x) { return x.name;}).indexOf('lapras'));
+})
+
+ball3.addEventListener('click', () => {
+    console.log('-----------')
+    setup(arr.map(function(x) { return x.name;}).indexOf('lucario'));
+})
+
+
+let setup = (i) => {
+    console.log('&&&&&&&&&&&&&');
+    console.log(arr);
+    showName.innerHTML = arr[i].name;
+    showHP.innerHTML = arr[i].hp;
+    showImg.src = arr[i].sprite;
+}
