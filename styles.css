@@ -70,6 +70,7 @@ body {
   border: double;
   background-color: #d9d9d9;
   font-family: 'pokemon-font';
-  border-radius: 15px; }
+  border-radius: 15px;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
