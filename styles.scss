@@ -9,6 +9,7 @@
   }
 $grass: #00b32d;
 $blackgrey: #333333;
+$circle: 50%;
 $transformation: translate(-50%, -50%);
 
 body {
@@ -17,10 +18,10 @@ body {
 #background {
     height: 300px;
     width: 700px;
-    border-radius: 50%;
+    border-radius: $circle;
     background-color: $grass;
     position: relative;
-    margin: auto;
+    margin: 50% auto;
 }
 
 // Image Hover Overlay CSS
@@ -44,7 +45,7 @@ body {
     opacity: 0;
     transition: .5s ease;
     background-color: black;
-    border-radius: 50%
+    border-radius: $circle;
   }
   
   .container:hover .overlay {
