@@ -134,23 +134,23 @@ let showDef = document.getElementById('displayDef')
 
 
 //defining each Pokeball for click event later & to link ea to specific Pkmn
-let ball1 = document.getElementById('pokeball')
-let ball2 = document.getElementById('diveBall')
-let ball3 = document.getElementById('greatBall')
+let poke = document.getElementById('pokeball')
+let dive = document.getElementById('diveBall')
+let great = document.getElementById('greatBall')
 let arr = elle.pokemonTeam
 
 //map function + indexOf to correlate Pokeball to specific Pkmn b/c array doesn't always load in same order (depending on load order from API)
-ball1.addEventListener('click', () => {
+poke.addEventListener('click', () => {
     // console.log('*********')
     setup(arr.map(function(x) { return x.name;}).indexOf('latias'));
 })
 
-ball2.addEventListener('click', () => {
+dive.addEventListener('click', () => {
     // console.log('++++++++++')
     setup(arr.map(function(x) { return x.name;}).indexOf('lapras'));
 })
 
-ball3.addEventListener('click', () => {
+great.addEventListener('click', () => {
     // console.log('-----------')
     setup(arr.map(function(x) { return x.name;}).indexOf('lucario'));
 })

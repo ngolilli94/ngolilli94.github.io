@@ -8,14 +8,22 @@
     /* There is no SVG version of this font due to support being dropped in SVG 2 */
   }
 $grass: #00b32d;
+$blackgrey: #333333;
+$fifty: 50%;
+$full: 100%;
+$center: center;
+$transformation: translate(-50%, -50%);
 
+body {
+    background-color: $blackgrey;
+}
 #background {
     height: 300px;
     width: 700px;
-    border-radius: 50%;
+    border-radius: $fifty;
     background-color: $grass;
     position: relative;
-    margin: auto;
+    margin: $fifty auto;
 }
 
 // Image Hover Overlay CSS
@@ -24,7 +32,7 @@ $grass: #00b32d;
 }  
   .image {
     display: block;
-    width: 100%;
+    width: $full;
     height: auto;
   }
   
@@ -34,12 +42,12 @@ $grass: #00b32d;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
+    height: $full;
+    width: $full;
     opacity: 0;
     transition: .5s ease;
     background-color: black;
-    border-radius: 50%
+    border-radius: $fifty;
   }
   
   .container:hover .overlay {
@@ -50,11 +58,11 @@ $grass: #00b32d;
     color: white;
     font-size: 20px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
+    top: $fifty;
+    left: $fifty;
+    transform: $transformation;
+    -ms-transform: $transformation;
+    text-align: $center;
     font-family: 'pokemon-font';
   }
 
@@ -86,14 +94,12 @@ $grass: #00b32d;
 
 //Modal Styling
 .modal {
-    // display: flex;
-    // flex-flow: row nowrap;
-
     #info-basic, #info-stats {
     border: double;
     background-color: #d9d9d9;
     font-family: 'pokemon-font';
     border-radius: 15px;
+    text-align: $center;
     }
     
 }

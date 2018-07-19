@@ -3,13 +3,16 @@
   src: url("fonts/pokemon-font.eot");
   /* IE9 Compat Modes */
   src: url("fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("fonts/pokemon-font.woff2") format("woff2"), url("fonts/pokemon-font.woff") format("woff"), url("fonts/pokemon-font.ttf") format("truetype"); }
+body {
+  background-color: #333333; }
+
 #background {
   height: 300px;
   width: 700px;
   border-radius: 50%;
   background-color: #00b32d;
   position: relative;
-  margin: auto; }
+  margin: 50% auto; }
 
 .container {
   position: fixed; }
@@ -67,6 +70,7 @@
   border: double;
   background-color: #d9d9d9;
   font-family: 'pokemon-font';
-  border-radius: 15px; }
+  border-radius: 15px;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
