@@ -8,7 +8,12 @@
     /* There is no SVG version of this font due to support being dropped in SVG 2 */
   }
 $grass: #00b32d;
+$blackgrey: #333333;
+$transformation: translate(-50%, -50%);
 
+body {
+    background-color: $blackgrey;
+}
 #background {
     height: 300px;
     width: 700px;
@@ -52,8 +57,8 @@ $grass: #00b32d;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    transform: $transformation;
+    -ms-transform: $transformation;
     text-align: center;
     font-family: 'pokemon-font';
   }

@@ -3,6 +3,9 @@
   src: url("fonts/pokemon-font.eot");
   /* IE9 Compat Modes */
   src: url("fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("fonts/pokemon-font.woff2") format("woff2"), url("fonts/pokemon-font.woff") format("woff"), url("fonts/pokemon-font.ttf") format("truetype"); }
+body {
+  background-color: #333333; }
+
 #background {
   height: 300px;
   width: 700px;
