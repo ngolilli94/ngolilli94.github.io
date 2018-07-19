@@ -1,7 +1,8 @@
 class Pokemon {
-    constructor(dexnum, name, hp, attack, defense, abilities) {
+    constructor(dexnum, name, sprite, hp, attack, defense, abilities) {
         this.dexnum = dexnum;
         this.name = name;
+        this.sprite = sprite;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -10,7 +11,6 @@ class Pokemon {
 }
 
 class Trainer {
-    //name is trainer name
     //Pokemon container object is an array
     constructor(pokemonTeam) {
         this.pokemonTeam = [];
@@ -51,10 +51,11 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
         let abilitiesName = element.ability.name;
         abilitiesList.push(abilitiesName);
     })
-
+    
     let lapras = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -84,6 +85,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/380/").then((response) => {
     let latias = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -111,6 +113,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     let lucario = new Pokemon(
         data.id,
         data.name,
+        data.sprites.front_default,
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
@@ -120,3 +123,49 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
     // console.log(lucario)
 })
 
+//Defining variables to push Information into modals
+let showNum = document.getElementById('displayNum')
+let showName = document.getElementById('displayName')
+let showImg = document.getElementById('displayImage')
+let showAbilities = document.getElementById('displayAbilities')
+let showHP = document.getElementById('displayHP')
+let showAtk = document.getElementById('displayAtk')
+let showDef = document.getElementById('displayDef')
+
+
+//defining each Pokeball for click event later & to link ea to specific Pkmn
+let ball1 = document.getElementById('pokeball')
+let ball2 = document.getElementById('diveBall')
+let ball3 = document.getElementById('greatBall')
+let arr = elle.pokemonTeam
+
+//map function + indexOf to correlate Pokeball to specific Pkmn b/c array doesn't always load in same order (depending on load order from API)
+ball1.addEventListener('click', () => {
+    // console.log('*********')
+    setup(arr.map(function(x) { return x.name;}).indexOf('latias'));
+})
+
+ball2.addEventListener('click', () => {
+    // console.log('++++++++++')
+    setup(arr.map(function(x) { return x.name;}).indexOf('lapras'));
+})
+
+ball3.addEventListener('click', () => {
+    // console.log('-----------')
+    setup(arr.map(function(x) { return x.name;}).indexOf('lucario'));
+})
+
+//Actually getting info into modals
+let setup = (i) => {
+    // console.log('&&&&&&&&&&&&&');
+    console.log(arr);
+    showNum.innerHTML = "#" + arr[i].dexnum;
+    showName.innerHTML = arr[i].name;
+    showImg.src = arr[i].sprite;
+    showAbilities.innerHTML = arr[i].abilities;
+    showHP.innerHTML = "HP: " + arr[i].hp;
+    showAtk.innerHTML = "Attack: " + arr[i].attack;
+    showDef.innerHTML = "Defense: " + arr[i].defense;
+
+
+}
