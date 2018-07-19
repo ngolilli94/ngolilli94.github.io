@@ -51,7 +51,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/131/").then((response) => {
         let abilitiesName = element.ability.name;
         abilitiesList.push(abilitiesName);
     })
-
+    
     let lapras = new Pokemon(
         data.id,
         data.name,
@@ -120,13 +120,14 @@ axios.get("https://pokeapi.co/api/v2/pokemon/448/").then((response) => {
         abilitiesList,
     )
     elle.add(lucario)
-    console.log(elle.pokemonTeam[0].name)
+    // console.log(lucario)
 })
 
 //Defining variables to push Information into modals
 let showNum = document.getElementById('displayNum')
 let showName = document.getElementById('displayName')
 let showImg = document.getElementById('displayImage')
+let showAbilities = document.getElementById('displayAbilities')
 let showHP = document.getElementById('displayHP')
 let showAtk = document.getElementById('displayAtk')
 let showDef = document.getElementById('displayDef')
@@ -140,27 +141,28 @@ let arr = elle.pokemonTeam
 
 //map function + indexOf to correlate Pokeball to specific Pkmn b/c array doesn't always load in same order (depending on load order from API)
 ball1.addEventListener('click', () => {
-    console.log('*********')
+    // console.log('*********')
     setup(arr.map(function(x) { return x.name;}).indexOf('latias'));
 })
 
 ball2.addEventListener('click', () => {
-    console.log('++++++++++')
+    // console.log('++++++++++')
     setup(arr.map(function(x) { return x.name;}).indexOf('lapras'));
 })
 
 ball3.addEventListener('click', () => {
-    console.log('-----------')
+    // console.log('-----------')
     setup(arr.map(function(x) { return x.name;}).indexOf('lucario'));
 })
 
-
+//Actually getting info into modals
 let setup = (i) => {
-    console.log('&&&&&&&&&&&&&');
+    // console.log('&&&&&&&&&&&&&');
     console.log(arr);
     showNum.innerHTML = "#" + arr[i].dexnum;
     showName.innerHTML = arr[i].name;
     showImg.src = arr[i].sprite;
+    showAbilities.innerHTML = arr[i].abilities;
     showHP.innerHTML = "HP: " + arr[i].hp;
     showAtk.innerHTML = "Attack: " + arr[i].attack;
     showDef.innerHTML = "Defense: " + arr[i].defense;
